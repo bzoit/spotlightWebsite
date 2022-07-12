@@ -1,0 +1,84 @@
+body {
+    font-family: 'Gulzar', serif;
+    background-color: #E8EDFF;
+}
+
+#headerContainer {
+    line-height: 7vh;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-top: 7vh;
+}
+
+form {
+    position: relative;
+    top: 35%;
+    padding-bottom: 10px;
+    border-bottom: 0.01em solid black;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+span {
+    color: red;
+    position: relative;
+    top: 2vh;
+}
+
+.input {
+    font-size: 0.8rem;
+    width: 15vw;
+    height: 3.5vh;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.65rem;
+}
+
+.button {
+    width: 13vw;
+    height: 5vh;
+    border: 0;
+    color: #FFF;
+    border-radius: 4px;
+    transition: ease-in-out 0.2s;
+    font-size: 0.9rem;
+}
+
+input.button {
+    background-color: dodgerblue;
+}
+
+button.button {
+    background-color: green;
+    margin-top: 1.35vh;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+#forgot {
+    font-size: 1.03rem;
+    text-decoration: none;
+}
+
+#forgot:hover {
+    text-decoration: underline;
+}
+
+#login-container {
+    background-color: #FFF;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 30vw;
+    height: 44vh;
+    border-radius: 10px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
