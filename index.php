@@ -10,23 +10,23 @@
     <link rel="icon" href="img/logo-icon.jpg">
 </head>
 <body>
-    <div id="headerContainer">
+    <div id="loginHeader">
         <h1>Spotlight</h1>
         <h2>Show the world your appreciation for the ones that mean the most to you.</h2>
     </div>
-    <div id="login-container">
-        <form>
+    <div class="form-container">
+        <form id="loginForm">
             <span><?php echo $loginError; ?></span>
             <br/>
             <input class="input" name="email" type="email" placeholder="Email">
             <br>
             <input class="input" name="password" type="password" placeholder="Password">
             <br>
-            <a id="forgot" href="/">Forgot Password?</a>
+            <a class="hypertext" href="/">Forgot Password?</a>
             <br>
-            <input type="submit" class="button" placeholder="Login" value="Login">
+            <input type="submit" class="button" value="Login">
         </form>
-        <a href="/">
+        <a href="./signup.php">
             <button class="button">Create An Account</button>
         </a>
     </div>

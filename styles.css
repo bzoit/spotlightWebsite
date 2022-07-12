@@ -3,7 +3,7 @@ body {
     background-color: #E8EDFF;
 }
 
-#headerContainer {
+#loginHeader {
     line-height: 7vh;
 }
 
@@ -15,17 +15,32 @@ h1 {
 
 form {
     position: relative;
-    top: 35%;
     padding-bottom: 10px;
-    border-bottom: 0.01em solid black;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 
+#loginForm {
+    border-bottom: 0.01em solid black;
+    top: 35%;
+}
+
+#signupForm {
+    top: 50%;
+}
+
 span {
     color: red;
+    text-align: center;
     position: relative;
+}
+
+#loginForm.span {
     top: 2vh;
+}
+
+#signupForm.span {
+    top: 1vh;
 }
 
 .input {
@@ -62,16 +77,16 @@ button.button {
     transform: scale(1.1);
 }
 
-#forgot {
+.hypertext {
     font-size: 1.03rem;
     text-decoration: none;
 }
 
-#forgot:hover {
+.hypertext:hover {
     text-decoration: underline;
 }
 
-#login-container {
+.form-container {
     background-color: #FFF;
     position: absolute;
     left: 50%;
