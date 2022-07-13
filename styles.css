@@ -22,10 +22,6 @@ form * {
     margin: 10px auto;
 }
 
-#loginForm {
-    border-bottom: 0.01em solid black;
-}
-
 span {
     color: red;
     text-align: center;
@@ -33,7 +29,7 @@ span {
 }
 
 #loginForm.span {
-    top: 2vh;
+    top: 1vh;
 }
 
 #signupForm.span {
@@ -41,7 +37,9 @@ span {
 }
 
 input[type="email"], input[type="password"] {
-    font-size: 0.8rem;
+    font-size: 1rem;
+    padding-left: 20px;
+    border-radius: 5px;
     border: 0.1em solid black;
     width: 70%;
 }
@@ -76,29 +74,32 @@ form a {
     text-decoration: none;
 }
 
-.form-container > a {
-    background-color: green;
-    display: inline-block;
-    padding: 2px;
-    font-size: 1.05rem;
-    text-align: center;
-    margin-top: 1.35vh;
-    text-decoration: none;
-    color: #FFF;
-}
-
 form a:hover {
     text-decoration: underline;
 }
 
 .form-container {
     background-color: #FFF;
-    position: absolute;
-    left: 50%;
+    margin: auto;
+    padding-top: 1px;
     padding-bottom: 12px;
-    top: 50%;
     width: clamp(300px, 405px, 420px);
     border-radius: 10px;
     text-align: center;
-    transform: translate(-50%, -50%);
+}
+
+#signupContainer {
+    border: 0.1em solid #616161;
+    border-radius: 6px;
+    margin: 3vh auto auto;
+    width: clamp(270px, 305px, 360px);
+    text-align: center;
+}
+
+#signupContainer a {
+    text-decoration: none;
+}
+
+#signupContainer a:hover {
+    text-decoration: underline;
 }

@@ -26,7 +26,9 @@
             <a href="/">Forgot Password?</a>
             <input type="submit" class="button" value="Login">
         </form>
-        <a class="button" href="./signup.php">Create An Account</a>
+    </div>
+    <div id="signupContainer">
+        <a href="./signup.php">Don't have an account? Sign up now.</a>
     </div>
 </body>
 </html>
