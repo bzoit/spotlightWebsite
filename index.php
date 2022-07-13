@@ -1,3 +1,7 @@
+<?php
+    $loginErr = "";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,19 +20,13 @@
     </div>
     <div class="form-container">
         <form id="loginForm">
-            <span><?php echo $loginError; ?></span>
-            <br/>
-            <input class="input" name="email" type="email" placeholder="Email">
-            <br>
-            <input class="input" name="password" type="password" placeholder="Password">
-            <br>
-            <a class="hypertext" href="/">Forgot Password?</a>
-            <br>
+            <span><?php echo $loginErr; ?></span>
+            <input name="email" type="email" placeholder="Email">
+            <input name="password" type="password" placeholder="Password">
+            <a href="/">Forgot Password?</a>
             <input type="submit" class="button" value="Login">
         </form>
-        <a href="./signup.php">
-            <button class="button">Create An Account</button>
-        </a>
+        <a class="button" href="./signup.php">Create An Account</a>
     </div>
 </body>
 </html>

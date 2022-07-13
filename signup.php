@@ -1,3 +1,7 @@
+<?php
+    $signupErr = "";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,15 +20,10 @@
 <div class="form-container">
   <form id="signupForm">
     <span><?php echo $signupErr; ?></span>
-    <br/>
-    <input class="input" name="email" type="email" placeholder="Email">
-    <br>
-    <input class="input" name="password" type="password" placeholder="Password">
-    <br>
-    <input class="input" name="confirm" type="password" placeholder="Confirm Password">
-    <br>
-    <a class="hypertext" href="./index.php">Already have an account?</a>
-    <br>
+    <input name="email" type="email" placeholder="Email">
+    <input name="password" type="password" placeholder="Password">
+    <input name="confirm" type="password" placeholder="Confirm Password">
+    <a href="./index.php">Already have an account?</a>
     <input type="submit" class="button" value="Signup">
   </form>
 </div>

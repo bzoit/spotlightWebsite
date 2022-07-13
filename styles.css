@@ -3,6 +3,10 @@ body {
     background-color: #E8EDFF;
 }
 
+input {
+    font-family: 'Gulzar', serif;
+}
+
 #loginHeader {
     line-height: 7vh;
 }
@@ -13,20 +17,13 @@ h1 {
     margin-top: 7vh;
 }
 
-form {
-    position: relative;
-    padding-bottom: 10px;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+form * {
+    display: block;
+    margin: 10px auto;
 }
 
 #loginForm {
     border-bottom: 0.01em solid black;
-    top: 35%;
-}
-
-#signupForm {
-    top: 50%;
 }
 
 span {
@@ -43,10 +40,10 @@ span {
     top: 1vh;
 }
 
-.input {
+input[type="email"], input[type="password"] {
     font-size: 0.8rem;
-    width: 15vw;
-    height: 3.5vh;
+    border: 0.1em solid black;
+    width: 70%;
 }
 
 h2 {
@@ -55,10 +52,10 @@ h2 {
 }
 
 .button {
-    width: 13vw;
-    height: 5vh;
+    padding: 12px;
     border: 0;
     color: #FFF;
+    width: 50%;
     border-radius: 4px;
     transition: ease-in-out 0.2s;
     font-size: 0.9rem;
@@ -66,23 +63,31 @@ h2 {
 
 input.button {
     background-color: dodgerblue;
-}
-
-button.button {
-    background-color: green;
-    margin-top: 1.35vh;
+    font-size: 1.05rem;
+    padding: 1px;
 }
 
 .button:hover {
     transform: scale(1.1);
 }
 
-.hypertext {
-    font-size: 1.03rem;
+form a {
+    font-size: 1.05rem;
     text-decoration: none;
 }
 
-.hypertext:hover {
+.form-container > a {
+    background-color: green;
+    display: inline-block;
+    padding: 2px;
+    font-size: 1.05rem;
+    text-align: center;
+    margin-top: 1.35vh;
+    text-decoration: none;
+    color: #FFF;
+}
+
+form a:hover {
     text-decoration: underline;
 }
 
@@ -90,9 +95,9 @@ button.button {
     background-color: #FFF;
     position: absolute;
     left: 50%;
+    padding-bottom: 12px;
     top: 50%;
-    width: 30vw;
-    height: 44vh;
+    width: clamp(300px, 405px, 420px);
     border-radius: 10px;
     text-align: center;
     transform: translate(-50%, -50%);
