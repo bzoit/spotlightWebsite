@@ -101,6 +101,15 @@ form a:hover {
     text-decoration: underline;
 }
 
+#forgotForm {
+    padding: 20px;
+}
+
+#forgotForm input.button {
+    font-size: 1.15rem;
+    margin-top: 30px;
+}
+
 @media (max-device-width: 550px) { /* Phone */
     h1 {
         font-size: 5rem;

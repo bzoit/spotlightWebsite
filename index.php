@@ -23,7 +23,7 @@
             <span><?php echo $loginErr; ?></span>
             <input name="email" type="email" placeholder="Email">
             <input name="password" type="password" placeholder="Password">
-            <a href="/">Forgot Password?</a>
+            <a href="forgotPass.php">Forgot Password?</a>
             <input type="submit" class="button" value="Login">
         </form>
     </div>
