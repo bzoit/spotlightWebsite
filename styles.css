@@ -7,13 +7,8 @@ input {
     font-family: 'Gulzar', serif;
 }
 
-#loginHeader {
-    line-height: 7vh;
-}
-
 h1 {
     text-align: center;
-    font-size: 2.4rem;
     margin-top: 7vh;
 }
 
@@ -40,13 +35,12 @@ input[type="email"], input[type="password"] {
     font-size: 1rem;
     padding-left: 20px;
     border-radius: 5px;
-    border: 0.1em solid black;
+    border: 0.05em solid black;
     width: 70%;
 }
 
 h2 {
     text-align: center;
-    font-size: 1.65rem;
 }
 
 .button {
@@ -83,17 +77,20 @@ form a:hover {
     margin: auto;
     padding-top: 1px;
     padding-bottom: 12px;
-    width: clamp(300px, 405px, 420px);
+    width: clamp(500px, 800px, 850px);
     border-radius: 10px;
     text-align: center;
 }
 
 #signupContainer {
-    border: 0.1em solid #616161;
+    border: 0.2em solid #616161;
     border-radius: 6px;
     margin: 3vh auto auto;
-    width: clamp(270px, 305px, 360px);
-    text-align: center;
+    width: clamp(400px, 700px, 750px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: clamp(60px, 80px, 110px);
 }
 
 #signupContainer a {
@@ -102,4 +99,118 @@ form a:hover {
 
 #signupContainer a:hover {
     text-decoration: underline;
+}
+
+@media (max-device-width: 550px) { /* Phone */
+    h1 {
+        font-size: 5rem;
+    }
+
+    h2 {
+        font-size: 44px;
+        padding: 50px;
+    }
+
+    #loginHeader {
+        line-height: 3.4vh;
+    }
+
+    #signupContainer a {
+        font-size: 2.3rem;
+    }
+
+    input[type="email"], input[type="password"] {
+        font-size: 2.85rem;
+    }
+
+    #loginForm, #signupForm {
+        padding-top: 15px;
+    }
+
+    #loginForm a, #signupForm a {
+        font-size: 2.7rem;
+    }
+
+    input.button {
+        font-size: 2.8rem;
+    }
+
+    .form-container {
+        margin: 150px auto auto;
+    }
+}
+
+
+@media only screen and (min-device-width: 600px) { /* Tablet */
+    h1 {
+        font-size: 3.4rem;
+    }
+
+    h2 {
+        font-size: 35px;
+        padding: 35px;
+    }
+
+    #loginHeader {
+        line-height: 8vh;
+    }
+
+    #signupContainer a {
+        font-size: 1.7rem;
+    }
+
+    input[type="email"], input[type="password"] {
+        font-size: 1.6rem;
+    }
+
+    #loginForm a, #signupForm a {
+        font-size: 1.8rem;
+    }
+
+    input.button {
+        font-size: 1.7rem;
+    }
+
+    .form-container {
+        margin: auto;
+    }
+}
+
+@media only screen and (min-device-width: 1300px) { /* Laptop */
+    input[type="email"], input[type="password"] {
+        font-size: 1rem;
+        border: 0.1em solid black;
+    }
+
+    input.button {
+        font-size: 1.2rem;
+    }
+
+    #loginForm a, #signupForm a {
+        font-size: 1.3rem;
+    }
+
+    .form-container {
+        width: clamp(300px, 600px, 650px);
+    }
+
+    #signupContainer {
+        width: clamp(200px, 500px, 550px);
+    }
+
+    #signupContainer a {
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        font-size: 2.3rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    #loginHeader {
+        line-height: 4vh;
+    }
 }
