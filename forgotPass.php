@@ -9,40 +9,19 @@
 
     $formErr = "";
 
-    print_r($_POST);
-
-    if($_POST["email"]) {
+    if($_POST) {
         if (empty($_POST["email"])) {
             $formErr = "Email is required";
         } else {
             $email = $_POST["email"];
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $formErr = "Invalid email format";
+            $query = $connection->prepare("SELECT * FROM users WHERE email=:email");
+            $query->bindParam("email", $email, PDO::PARAM_STR);
+            $query->execute();
+            $result = $query->fetch(PDO::FETCH_ASSOC);
+            if (!$result) {
+                $formErr = "There are no accounts with that email.";
             } else {
-                $email = $_POST["email"];
-
-                $mail = new PHPMailer();
-
-                try {
-                    $mail->isSMTP();                                            //Send using SMTP
-                    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-                    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                    $mail->Username   = 'spotlightnoreply01@gmail.com';                     //SMTP username
-                    $mail->Password   = 'B0zzMan137!';                               //SMTP password
-                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-                    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-                    $mail->setFrom('spotlightnoreply01@gmail.com');
-                    $mail->addAddress($email);
-
-                    $mail->Subject = 'Spotlight Password Reset';
-                    $mail->Body = 'A Spotlight user is trying to reset your password. If this action was not approved by you, it is strongly advised that you reset your password to prevent your account from being stolen: https://link.com/forgot. If you are trying to reset your password, your code is: 123456.';
-
-                    $mail->send();
-                    echo 'Message has been sent';
-                } catch (Exception $e) {
-                    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-                }
+                // do stuff
             }
         }
     }

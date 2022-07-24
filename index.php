@@ -1,5 +1,33 @@
 <?php
     $loginErr = "";
+    session_start();
+
+    if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+        header("Location: ./feed.php");
+        die();
+    }
+
+    include('config.php');
+    if (isset($_POST['email'])) {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $query = $connection->prepare("SELECT * FROM users WHERE email=:email");
+        $query->bindParam("email", $email, PDO::PARAM_STR);
+        $query->execute();
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+        if (!$result) {
+            $loginErr = "The email or password is incorrect.";
+        } else {
+            if (password_verify($password, $result['password'])) {
+                $_SESSION['email'] = $result['email'];
+                $_SESSION['loggedin'] = true;
+                header("Location: ./feed.php");
+                die();
+            } else {
+                $loginErr = "The email or password is incorrect.";
+            }
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +47,7 @@
         <h2>Show the world your appreciation for the ones that mean the most to you.</h2>
     </div>
     <div class="form-container">
-        <form id="loginForm">
+        <form method="post" id="loginForm">
             <span><?php echo $loginErr; ?></span>
             <input name="email" type="email" placeholder="Email">
             <input name="password" type="password" placeholder="Password">

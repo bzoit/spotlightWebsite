@@ -1,5 +1,61 @@
 <?php
+    // Include config file
+    require_once "config.php";
+    session_start();
+
+    // Define variables and initialize with empty values
     $signupErr = "";
+
+    if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+        header("Location: ./feed.php");
+        die();
+    }
+
+    // Processing form data when form is submitted
+    if($_POST) {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $confPass = $_POST['confirm'];
+        $password_hash = password_hash($password, PASSWORD_BCRYPT);
+
+        $uppercase = preg_match('@[A-Z]@', $password);
+        $number = preg_match('@[0-9]@', $password);
+
+        if(empty($email)) {
+            $signupErr = "Email is required.";
+        } elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $signupErr = "Invalid email address.";
+        } elseif(empty($password)) {
+            $signupErr = "Password is required.";
+        } elseif(!$uppercase || !$number || strlen($password) < 8) {
+            $signupErr = "Password should be at least 8 characters in length and should include at least one upper case letter and one number";
+        } elseif (empty($confPass)) {
+            $signupErr = "Please confirm password.";
+        } elseif ($password != $confPass) {
+            $signupErr = "Passwords must match.";
+        } else {
+            $query = $connection->prepare("SELECT * FROM users WHERE email=:email");
+            $query->bindParam("email", $email, PDO::PARAM_STR);
+            $query->execute();
+            if ($query->rowCount() > 0) {
+                $signupErr = "Email address already in use.";
+            }
+            if ($query->rowCount() == 0) {
+                $query = $connection->prepare("INSERT INTO users(password,email) VALUES (:password_hash,:email)");
+                $query->bindParam("password_hash", $password_hash, PDO::PARAM_STR);
+                $query->bindParam("email", $email, PDO::PARAM_STR);
+                $result = $query->execute();
+                if ($result) {
+                    $_SESSION['email'] = $email;
+                    $_SESSION['loggedin'] = true;
+                    header("Location: ./login.php");
+                    die();
+                } else {
+                    $signupErr = "Something went wrong! Please try again later.";
+                }
+            }
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +74,7 @@
   <h1>Signup</h1>
 </div>
 <div class="form-container">
-  <form id="signupForm">
+  <form method="post" id="signupForm">
     <span><?php echo $signupErr; ?></span>
     <input name="email" type="email" placeholder="Email">
     <input name="password" type="password" placeholder="Password">
