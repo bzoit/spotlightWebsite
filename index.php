@@ -8,7 +8,8 @@
     }
 
     include('config.php');
-    if (isset($_POST['email'])) {
+
+    if ($_POST) {
         $email = $_POST['email'];
         $password = $_POST['password'];
         $query = $connection->prepare("SELECT * FROM users WHERE email=:email");
@@ -19,7 +20,7 @@
             $loginErr = "The email or password is incorrect.";
         } else {
             if (password_verify($password, $result['password'])) {
-                $_SESSION['email'] = $result['email'];
+                $_SESSION['token'] = $result['token'];
                 $_SESSION['loggedin'] = true;
                 header("Location: ./feed.php");
                 die();

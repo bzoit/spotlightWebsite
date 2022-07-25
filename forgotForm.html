@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spotlight | Reset Password</title>
+    <link rel="icon" href="img/logo-icon.jpg">
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gulzar&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>Reset Password</h1>
+  <div class="form-container">
+      <form method="post" id="changeForm">
+          <span><?php echo $formErr; ?></span>
+          <input name="currPass" type="password" placeholder="Current Password">
+          <input name="newPass" type="password" placeholder="New Password">
+          <input name="confPass" type="password" placeholder="Confirm New Password">
+          <input name="submit" class="button" value="Submit">
+      </form>
+  </div>
+</body>
+</html>

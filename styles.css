@@ -110,6 +110,12 @@ form a:hover {
     margin-top: 30px;
 }
 
+#changeForm input.button {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+
 @media (max-device-width: 550px) { /* Phone */
     h1 {
         font-size: 5rem;
