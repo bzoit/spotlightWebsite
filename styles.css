@@ -106,19 +106,25 @@ form a:hover {
 }
 
 #forgotForm input.button {
-    font-size: 1.15rem;
-    margin-top: 30px;
-}
-
-#changeForm input.button {
-    text-align: center;
-    font-size: 1.1rem;
+    margin-top: 40px;
 }
 
 
 @media (max-device-width: 550px) { /* Phone */
     h1 {
         font-size: 5rem;
+    }
+
+    #forgotHeader {
+        font-size: 4rem;
+    }
+
+    #forgotForm input.button {
+        font-size: 2.4rem;
+    }
+
+    #forgotForm input {
+        font-size: 2.4rem;
     }
 
     h2 {
@@ -161,6 +167,14 @@ form a:hover {
         font-size: 3.4rem;
     }
 
+    #forgotForm input.button {
+        font-size: 2.3rem;
+    }
+
+    #forgotForm input {
+        font-size: 2.2rem;
+    }
+
     h2 {
         font-size: 35px;
         padding: 35px;
@@ -197,6 +211,14 @@ form a:hover {
         border: 0.1em solid black;
     }
 
+    #forgotForm input.button {
+        font-size: 1.3rem;
+    }
+
+    #forgotForm input {
+        font-size: 1.15rem;
+    }
+
     input.button {
         font-size: 1.2rem;
     }
@@ -214,7 +236,7 @@ form a:hover {
     }
 
     #signupContainer a {
-        font-size: 1.2rem;
+        font-size: 1.35rem;
     }
 
     h1 {
@@ -227,5 +249,9 @@ form a:hover {
 
     #loginHeader {
         line-height: 4vh;
+    }
+
+    #forgotHeader {
+        font-size: 3.1rem;
     }
 }

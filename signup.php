@@ -2,7 +2,8 @@
     // Include config file
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
-    require_once "config.php";
+    include('config.php');
+    include('generateToken.php');
     require 'vendor/phpmailer/phpmailer/src/Exception.php';
     require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
     require 'vendor/phpmailer/phpmailer/src/SMTP.php';
@@ -19,11 +20,8 @@
 
     // Processing form data when form is submitted
     if($_POST) {
-        function generateRandomString() {
-            return substr(str_shuffle(str_repeat($x='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil(9/strlen($x)) )),1,9);
-        }
 
-        $token = generateRandomString();
+        $token = generateRandomString($connection);
         $email = $_POST['email'];
         $password = $_POST['password'];
         $confPass = $_POST['confirm'];
@@ -31,6 +29,8 @@
 
         $uppercase = preg_match('@[A-Z]@', $password);
         $number = preg_match('@[0-9]@', $password);
+        $lowercase = preg_match('@[a-z]@', $password);
+        $specialChars = preg_match('@[^\w]@', $password);
 
         if(empty($email)) {
             $signupErr = "Email is required.";
@@ -38,8 +38,8 @@
             $signupErr = "Invalid email address.";
         } elseif(empty($password)) {
             $signupErr = "Password is required.";
-        } elseif(!$uppercase || !$number || strlen($password) < 8) {
-            $signupErr = "Password should be at least 8 characters in length and should include at least one upper case letter and one number";
+        } elseif(!$uppercase || !$lowercase || !$specialChars || !$number || strlen($password) < 8) {
+            $signupErr = "Password should be at least 8 characters in length and should include at least one upper case letter, one lowercase letter, one special character, and one number";
         } elseif (empty($confPass)) {
             $signupErr = "Please confirm password.";
         } elseif ($password != $confPass) {

@@ -12,7 +12,7 @@
         die();
     }
 
-    $link = "<a href='http://192.168.64.3/tribute/verify.php?token='".$_SESSION["token"].">click here</a>";
+    $link = "<a href='http://192.168.64.3/tribute/verify.php?token='".$_SESSION["token"].">Click here</a>";
 
     $query = $connection->prepare("SELECT email FROM users WHERE token=:token");
     $query->bindParam("token", $_SESSION["token"], PDO::PARAM_STR);
@@ -24,9 +24,9 @@
     $mail = new PHPMailer(true);
 
     try {
-        $mail->CharSet =  "utf-8";
+        $mail->CharSet = "utf-8";
         $mail->IsSMTP();
-        $mail->SMTPAuth   = true;
+        $mail->SMTPAuth = true;
         $mail->Username = "wht.finance7@yahoo.com";
         $mail->Password = "B0zzMan179!";
         $mail->SMTPSecure = "ssl";
@@ -39,7 +39,7 @@
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = 'Spotlight Account Verification';
-        $mail->Body = 'Hello! Your email, ' . $result['email'] . ", has been used to register a Spotlight account. You're almost finished. " . 'You just have to ' . $link . ' to verify.';
+        $mail->Body = 'Hello! Your email, ' . $result['email'] . ", has been used to register a Spotlight account. Now, you just have to verify your email address. " . $link . ' to verify.';
         $mail->send();
         echo 'Message has been sent';
     } catch (Exception $e) {
