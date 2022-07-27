@@ -1,7 +1,7 @@
 <?php
-    define('USER', 'root');
-    define('PASSWORD', '');
-    define('HOST', '127.0.0.1');
+    define('USER', 'wilsont');
+    define('PASSWORD', 'B0zzMan137!');
+    define('HOST', '68.81.62.164');
     define('DATABASE', 'spotlight');
     try {
         $connection = new PDO("mysql:host=".HOST.";dbname=".DATABASE, USER, PASSWORD);

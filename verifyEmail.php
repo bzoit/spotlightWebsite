@@ -1,9 +1,7 @@
 <?php
     session_start();
 
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\SMTP;
-    use PHPMailer\PHPMailer\Exception;
+    use Sendpulse\RestApi\ApiClient;
     require 'vendor/autoload.php';
     include('config.php');
 
@@ -19,30 +17,40 @@
     $query->execute();
     $result = $query->fetch(PDO::FETCH_ASSOC);
 
-    print_r($_SESSION["token"]);
+    define('API_USER_ID', '');
+    define('API_SECRET', '');
 
-    $mail = new PHPMailer(true);
+    $SPApiClient = new ApiClient(API_USER_ID, API_SECRET);
 
-    try {
-        $mail->CharSet = "utf-8";
-        $mail->IsSMTP();
-        $mail->SMTPAuth = true;
-        $mail->Username = "wht.finance7@yahoo.com";
-        $mail->Password = "B0zzMan179!";
-        $mail->SMTPSecure = "ssl";
-        $mail->Host = "smtp.mail.yahoo.com";
-        $mail->Port = "465";                               //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-        //Recipients
-        $mail->setFrom('wht.finance7@yahoo.com');
-        $mail->addAddress($result['email']);
-        //Content
-        $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = 'Spotlight Account Verification';
-        $mail->Body = 'Hello! Your email, ' . $result['email'] . ", has been used to register a Spotlight account. Now, you just have to verify your email address. " . $link . ' to verify.';
-        $mail->send();
-        echo 'Message has been sent';
-    } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-    }
+    $email = array(
+        'text' => 'Hello! Your email, ' . $result['email'] . ", has been used to register a Spotlight account. Now, you just have to verify your email address. " . $link . ' to verify.',
+        'subject' => 'Spotlight Account Verification',
+        'from' => array(
+            'name' => 'Spotlight',
+            'email' => 'sender@example.com',
+        ),
+        'to' => array(
+            array(
+                'name' => $result['email'],
+                'email' => $result['email'],
+            ),
+        ),
+    );
+    var_dump($SPApiClient->smtpSendMail($email));
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gulzar&display=swap" rel="stylesheet">
+    <title>Spotlight | Verify Email</title>
+    <link rel="icon" href="img/logo-icon.jpg">
+</head>
+<body id="emailCheck">
+    <h1>We've emailed you instructions to verify your Spotlight account. If you did not receive the email, please check your spam/junk folder or <a href="verifyEmail.php">click here</a> to resend it.</h1>
+</body>
+</html>

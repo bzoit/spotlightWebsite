@@ -12,6 +12,22 @@ h1 {
     margin-top: 7vh;
 }
 
+#emailCheck h1 {
+    margin: 0 auto;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+#emailCheck h1 a {
+    text-decoration: none;
+}
+
+#emailCheck h1 a:hover {
+    text-decoration: underline;
+}
+
 form * {
     display: block;
     margin: 10px auto;
@@ -159,6 +175,11 @@ form a:hover {
     .form-container {
         margin: 150px auto auto;
     }
+
+    #emailCheck h1 {
+        line-height: 7vh;
+        font-size: 4.3rem;
+    }
 }
 
 
@@ -202,6 +223,11 @@ form a:hover {
 
     .form-container {
         margin: auto;
+    }
+
+    #emailCheck h1 {
+        line-height: 9vh;
+        font-size: 2.8rem;
     }
 }
 
@@ -253,5 +279,9 @@ form a:hover {
 
     #forgotHeader {
         font-size: 3.1rem;
+    }
+
+    #emailCheck h1 {
+        line-height: 8vh;
     }
 }
