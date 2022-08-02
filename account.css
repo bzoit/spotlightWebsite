@@ -131,7 +131,7 @@ form a:hover {
         font-size: 5rem;
     }
 
-    #forgotHeader {
+    #forgotHeader, #emailHeader {
         font-size: 4rem;
     }
 
@@ -277,7 +277,7 @@ form a:hover {
         line-height: 4vh;
     }
 
-    #forgotHeader {
+    #forgotHeader, #emailHeader {
         font-size: 3.1rem;
     }
 

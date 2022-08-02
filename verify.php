@@ -3,9 +3,7 @@
     include('config.php');
     include('generateToken.php');
 
-
     if($_GET) {
-        echo("p");
         $_SESSION['token'] = $_GET['token'];
         $_SESSION['loggedin'] = true;
 
