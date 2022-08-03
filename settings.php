@@ -9,7 +9,7 @@
     <title>Spotlight | Settings</title>
     <link rel="icon" href="img/logo-icon.jpg">
 </head>
-<body>
+<body id="settingsBody">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="settings.php">Settings</a>
@@ -25,15 +25,13 @@
     <div id="main">
         <h1>Account Settings</h1>
         <div class="mainContainer">
-            <div>
-                <div id="emailText">
-                    <h2>Email Address</h2>
-                    <p>user@example.com</p>
-                </div>
-                <a id="changeEmail" href="changeEmail.php">Change Email</a>
-                <a id="resetPass" href="forgotPass.php">Reset Password</a>
+            <div id="emailText">
+                <h2>Email Address</h2>
+                <p>user@example.com</p>
             </div>
+            <a id="changeEmail" href="changeEmail.php">Change Email</a>
         </div>
+        <a id="resetPass" href="forgotPass.php">Reset Password</a>
     </div>
 
     <script type="text/javascript">

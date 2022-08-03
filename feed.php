@@ -21,8 +21,8 @@
   <link rel="icon" href="img/logo-icon.jpg">
 </head>
 <body>
-  <div class="dropdown">
-    <button class="dropbtn"><img src="img/user.jpg" alt="user"></button>
+  <div class="dropdown" onclick="showContent()">
+    <button class="dropbtn" aria-label="User Settings"><img src="img/user.jpg" alt="User Settings"></button>
     <div class="dropdown-content">
       <a href="settings.php">Settings</a>
       <a href="/">My Posts</a>
@@ -30,5 +30,17 @@
       <a href="logout.php">Logout</a>
     </div>
   </div>
+
+  <script>
+      function showContent() {
+          const content = document.getElementsByClassName("dropdown-content")[0];
+
+          if(content.style.display === "block") {
+              content.style.display = "none";
+          } else {
+              content.style.display = "block";
+          }
+      }
+  </script>
 </body>
 </html>
