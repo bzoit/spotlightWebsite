@@ -44,7 +44,7 @@
 </head>
 <body>
     <div id="loginHeader">
-        <h1>Spotlight</h1>
+        <h1 aria-label="Spotlight">Spotlight</h1>
         <h2>Show the world your appreciation for the ones that mean the most to you.</h2>
     </div>
     <div class="form-container">

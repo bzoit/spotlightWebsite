@@ -22,7 +22,7 @@
 </head>
 <body>
   <div class="dropdown" onclick="showContent()">
-    <button class="dropbtn" aria-label="User Settings"><img src="img/user.jpg" alt="User Settings"></button>
+    <button class="dropbtn" aria-label="Open Settings Dropdown"><img src="img/user.jpg" alt="User Settings"></button>
     <div class="dropdown-content">
       <a href="settings.php">Settings</a>
       <a href="/">My Posts</a>

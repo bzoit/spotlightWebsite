@@ -11,7 +11,7 @@
 </head>
 <body id="settingsBody">
     <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a tabindex="-1" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="settings.php">Settings</a>
         <a href="/">My Posts</a>
         <a href="/">My Comments</a>
@@ -25,7 +25,7 @@
     <div id="main">
         <h1>Account Settings</h1>
         <div class="mainContainer">
-            <div id="emailText">
+            <div tabindex="1" id="emailText">
                 <h2>Email Address</h2>
                 <p>user@example.com</p>
             </div>

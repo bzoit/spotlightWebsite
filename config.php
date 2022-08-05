@@ -1,8 +1,8 @@
 <?php
-    define('USER', 'wilsont');
-    define('PASSWORD', 'B0zzMan137!');
-    define('HOST', '68.81.62.164');
-    define('DATABASE', 'spotlight');
+    const USER = 'root';
+    const PASSWORD = '';
+    const HOST = 'localhost';
+    const DATABASE = 'spotlight';
     try {
         $connection = new PDO("mysql:host=".HOST.";dbname=".DATABASE, USER, PASSWORD);
     } catch (PDOException $e) {
