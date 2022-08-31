@@ -48,7 +48,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gulzar&display=swap" rel="stylesheet">
     <title>Spotlight | Verify Email</title>
-    <link rel="icon" href="img/logo-icon.jpg">
+    <link rel="icon" href="img/logo-icon.png">
 </head>
 <body id="emailCheck">
     <h1>We've emailed you instructions to verify your Spotlight account. If you did not receive the email, please check your spam/junk folder or <a href="verifyEmail.php">click here</a> to resend it.</h1>

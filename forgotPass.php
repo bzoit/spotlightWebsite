@@ -57,7 +57,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gulzar&display=swap" rel="stylesheet">
     <title>Spotlight | Forgot Password</title>
-    <link rel="icon" href="img/logo-icon.jpg">
+    <link rel="icon" href="img/logo-icon.png">
 </head>
 <body>
     <h1 id="forgotHeader">Forgot Password?</h1>

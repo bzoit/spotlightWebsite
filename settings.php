@@ -1,3 +1,20 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"] === true){
+        header("Location: ./index.php");
+        die();
+    }
+
+    include('config.php');
+
+    $token = $_SESSION["token"];
+
+    $query = $connection->prepare("SELECT email FROM users WHERE token=:token");
+    $query->bindParam("token", $token, PDO::PARAM_STR);
+    $email = $query->execute();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gulzar&display=swap" rel="stylesheet">
     <title>Spotlight | Settings</title>
-    <link rel="icon" href="img/logo-icon.jpg">
+    <link rel="icon" href="img/logo-icon.png">
 </head>
 <body id="settingsBody">
     <div id="mySidenav" class="sidenav">
@@ -19,7 +36,7 @@
     </div>
 
     <span onclick="openNav()">
-        <img class="menu" src="img/menu.jpg"  alt="menu"/>
+        <img class="menu" src="img/menu.png" alt="menu"/>
     </span>
 
     <div id="main">
@@ -27,7 +44,7 @@
         <div class="mainContainer">
             <div tabindex="1" id="emailText">
                 <h2>Email Address</h2>
-                <p>user@example.com</p>
+                <p><?php echo $email; ?></p>
             </div>
             <a id="changeEmail" href="changeEmail.php">Change Email</a>
         </div>

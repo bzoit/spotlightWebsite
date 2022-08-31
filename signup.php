@@ -79,7 +79,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gulzar&display=swap" rel="stylesheet">
   <title>Spotlight | Signup</title>
-  <link rel="icon" href="img/logo-icon.jpg">
+  <link rel="icon" href="img/logo-icon.png">
 </head>
 <body>
 <div>

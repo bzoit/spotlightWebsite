@@ -39,7 +39,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Spotlight | Change Email</title>
-    <link rel="icon" href="img/logo-icon.jpg">
+    <link rel="icon" href="img/logo-icon.png">
     <link rel="stylesheet" href="account.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

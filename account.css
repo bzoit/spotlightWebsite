@@ -7,6 +7,79 @@ input {
     font-family: 'Gulzar', serif;
 }
 
+input[name="name"], input[name="link"] {
+    width: 300px;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+
+#previewCntr {
+    background-color: #FFF;
+    width: 550px;
+    height: 425px;
+    margin-left: 50px;
+    position: absolute;
+    border-radius: 15px;
+    text-align: center;
+    visibility: hidden;
+}
+
+img:not([src]) {
+    display: none;
+}
+
+#pImg {
+    max-width: 60%;
+    margin-top: 3%;
+}
+
+#pName {
+    padding: 0;
+    line-height: 0;
+}
+
+#pLink {
+    font-size: 1.1rem;
+    color: #0000EE;
+    padding: 0;
+    line-height: 0;
+    margin-top: 45px;
+}
+
+#pLink:hover {
+    text-decoration: underline;
+}
+
+#pMsg {
+    font-size: 1.05rem;
+    margin-top: 30px;
+    line-height: 23px;
+}
+
+#previewPost {
+    color: #0000EE;
+    font-size: 1rem;
+    padding: 10px 10px 20px;
+    line-height: 0;
+}
+
+#previewPost:hover {
+    text-decoration: underline;
+}
+
+input[type="file"] {
+    text-align: center;
+}
+
+textarea {
+    resize: none;
+    width: 300px;
+    box-sizing: border-box;
+    font-family: 'Gulzar', serif;
+    height: 80px;
+    padding-left: 10px;
+}
+
 h1 {
     text-align: center;
     margin-top: 7vh;
